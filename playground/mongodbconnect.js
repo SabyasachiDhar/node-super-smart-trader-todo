@@ -6,19 +6,19 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     }
     console.log("Connected to mongodb server!!");
 
-    // db.collection('Todo').insertOne({
-    //     name: 'Wakhanada mining',
-    //     holding: 1000,
-    //     cost: 10,
-    //     price: 40.2,
-    //     change: 0.00
-    // }, (err, result) => {
-    //     if(err){
-    //         return console.log("Unable to inssert in Database");
-    //     }
+    db.collection('Todo').insertOne({
+        name: 'Wakhanada mining',
+        holding: 1000,
+        cost: 10,
+        price: 40.2,
+        change: 0.00
+    }, (err, result) => {
+        if(err){
+            return console.log("Unable to inssert in Database");
+        }
 
-    //     console.log(JSON.stringify(result.ops, undefined, 2));
-    // });
+        console.log(JSON.stringify(result.ops, undefined, 2));
+    });
 
     db.collection('Users').insertOne({
         name: 'Sachi',
