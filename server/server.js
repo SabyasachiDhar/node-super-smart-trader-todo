@@ -26,6 +26,14 @@ app.post('/superSmartTraderMainTable', (req, res) => {
     });
 });
 
+app.get('/getSuperSmartTraderMainTable', (req, res) =>{
+    SuperSmartTraderMainTable.find().then((doc) => {
+        res.send({doc});
+    }, (err) => {
+        res.status(400).send(err)
+    });
+});
+
 app.post('/superSmartTradeUserTable', (req, res) => {
     var newSuperSmartTraderUserTable = new SuperSmartTraderUserTable({
         tableNo: req.body.tableNo,
