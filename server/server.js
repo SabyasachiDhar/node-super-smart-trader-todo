@@ -15,6 +15,8 @@ var {
 
 var app = express();
 
+const port = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
 
 app.post('/superSmartTraderMainTable', (req, res) => {
@@ -76,7 +78,6 @@ app.get('/superSmartTradeUserTable', (req, res) => {
     });
 });
 
-
 app.get('/superSmartTradeUserTable/:id', (req, res) => {
     var id = req.params.id;
 
@@ -99,6 +100,6 @@ app.get('/superSmartTradeUserTable/:id', (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Starting App..at port 3000');
+app.listen(port, () => {
+    console.log(`Starting App..at port${port}`);
 });
