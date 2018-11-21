@@ -6,6 +6,11 @@ var SuperSmartTraderUserTable = mongoose.model('SuperSmartTraderUserTable', {
         require: true,
         minlength: 1
     },
+    tableId:{
+        type: String,
+        trim: true,
+        require: true
+    },
     userName: {
         type: String,
         require: true,
